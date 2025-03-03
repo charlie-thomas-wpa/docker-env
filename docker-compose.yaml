@@ -1,0 +1,6 @@
+services:
+  oingo-boingo:
+    build: .
+    env_file:
+      - ${ENV_FILE}
+    command: [ "bash" ]
