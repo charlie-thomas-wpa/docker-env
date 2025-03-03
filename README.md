@@ -17,12 +17,32 @@ Point to a different .env or modify the existing to provide different environmen
 
 
 ```bash
+# Test env
 $env:ENV_FILE="oingo.env"; docker compose up
+
+# Dev env
+$env:ENV_FILE="DevOingo.env"; docker compose up
+
+# Stg env
+$env:ENV_FILE="StgOingo.env"; docker compose up
+
+# LiVe env
+$env:ENV_FILE="LiveOingo.env"; docker compose up
 ```
 
 ## run without auto
 ```bash
+# Test env
 $env:ENV_FILE="oingo.env"; docker compose run --rm -it --entrypoint /bin/bash oingo-boingo
+
+# Dev env
+$env:ENV_FILE="DevOingo.env"; docker compose run --rm -it --entrypoint /bin/bash oingo-boingo
+
+# Stg env
+$env:ENV_FILE="StgOingo.env"; docker compose run --rm -it --entrypoint /bin/bash oingo-boingo
+
+# LiVe env
+$env:ENV_FILE="LiveOingo.env"; docker compose run --rm -it --entrypoint /bin/bash oingo-boingo
 ```
 
 | Component                  | Purpose                                                                                                       |

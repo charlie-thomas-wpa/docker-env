@@ -12,9 +12,9 @@ REQUIRED_ENV_VARS=(
 if [[ -f .env ]]; then
     echo "Loading environment variables from .env file..."
     export $(grep -v '^#' .env | xargs)
-else
-    echo "Image not provided with an .env file! Exiting..."
-    exit 1
+#else THIS BIT DOESN'T WORK PROPERLY
+#    echo "Image not provided with an .env file! Exiting..."
+#    exit 1
 fi
 
 MISSING_VARS=()
@@ -55,3 +55,9 @@ echo "Current user: $(whoami)"
 
 # Debugging: Print received arguments
 echo "Received args: $@"
+
+echo "Running OingoBoingo..."
+cd src/OingoBoingo/OingoBoingo
+dotnet restore
+dotnet build
+dotnet run "$@"
